@@ -1,19 +1,36 @@
 <div class=" max-w-lg m-auto text-center mt-16">
   <h1 class="text-6xl text-gray-600">Walkout song</h1>
   <div class="flex my-8">
-    <div class="p-2 text-6xl flex-grow">
+    <EmojiSelector
+      @selected={{eq emojiSong "heart"}}
+      @onclick={{action (mut emojiSong) "heart"}}
+     >
       😍
-    </div>
-    <div class="p-2 text-6xl flex-grow">
+    </EmojiSelector>
+    <EmojiSelector
+      @selected={{eq emojiSong "poop"}}
+      @onclick={{action (mut emojiSong) "poop"}}
+    >
       💩
-    </div>
-    <div class="p-2 text-6xl flex-grow">
+    </EmojiSelector>
+    <EmojiSelector
+      @selected={{eq emojiSong "sob"}}
+      @onclick={{action (mut emojiSong) "sob"}}
+    >
       😭
-    </div>
-    <div class="p-2 text-6xl flex-grow">
+    </EmojiSelector>
+    <EmojiSelector
+      @selected={{eq emojiSong "curse"}}
+      @onclick={{action (mut emojiSong) "curse"}}
+    >
       🤬
-    </div>
+    </EmojiSelector>
   </div>
+
+  {{#if emojiSong}}
+    <Player @song={{get this.songs this.emojiSong}} />
+  {{/if}}
+
   <div>
     <input
       onkeyup={{perform searchResultsTask value="target.value"}}
