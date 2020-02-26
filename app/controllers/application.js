@@ -7,22 +7,26 @@ let songs = {
   heart: {
     title: "Lose Yourself to Dance",
     artist: "Daft Punk",
-    albumCover: ""
+    albumCover: "",
+    trackId: "5CMjjywI0eZMixPeqNd75R"
   },
   poop: {
     title: "Photograph",
     artist: "Nickleback",
-    albumCover: ""
+    albumCover: "",
+    trackId: "3hb2ScEVkGchcAQqrPLP0R"
   },
   sob: {
     title: "Stay With Me",
     artist: "Sam Smith",
-    albumCover: ""
+    albumCover: "",
+    trackId: "5Nm9ERjJZ5oyfXZTECKmRt"
   },
   curse: {
     title: "We're not going to take it",
     artist: "Twisted Sister",
-    albumCover: ""
+    albumCover: "",
+    trackId: "1hlveB9M6ijHZRbzZ2teyh"
   }
 };
 export default Controller.extend({

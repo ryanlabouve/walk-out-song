@@ -1,4 +1,5 @@
 <div class="bg-gray-300 my-4 p-4">
-  ⏸ ▶️ {{@song.title}} by {{@song.artist}}
+  {{@song.title}} by {{@song.artist}}
+  <iframe class="m-auto" src="https://open.spotify.com/embed/track/{{@song.trackId}}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   {{yield}}
 </div>

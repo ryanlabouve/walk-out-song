@@ -1,5 +1,6 @@
 <div class=" max-w-lg m-auto text-center mt-16">
   <h1 class="text-6xl text-gray-600">Walkout song</h1>
+  <p>When you check in with Envoy, let the world know you've arrived with your anthem</p>
   <div class="flex my-8">
     <EmojiSelector
       @selected={{eq emojiSong "heart"}}
@@ -46,6 +47,7 @@
         Match found!
       {{else}}
         No matches found
+        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       {{/each}}
     {{/if}}
   {{/if}}
