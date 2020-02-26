@@ -1,12 +1,20 @@
 import Controller from "@ember/controller";
-import { inject as service } from "@ember/service";
 import { computed } from "@ember/object";
+import { task, timeout } from "ember-concurrency";
+import { set } from "@ember/object";
 
 export default Controller.extend({
-  songs: service(),
+  searchResults: [],
+  searchTerm: null,
 
-  searchResultsTask: computed("search", function() {
-    debugger;
-    return this.songs.searchForSong(this.search);
+  searchResultsTask: task(function*(searchTerm) {
+    set(this, "searchTerm", searchTerm);
+
+    yield timeout(2000);
+    set(this, "results", [
+      {
+        title: "test"
+      }
+    ]);
   })
 });
