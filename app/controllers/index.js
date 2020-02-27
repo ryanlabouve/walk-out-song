@@ -45,41 +45,16 @@ export default Controller.extend({
       let request = yield fetch(url, {
         headers: {
           Authorization:
-            "Bearer BQD6bb3nnt9ykZDUT_Zf6bYiSjRKZJxTOuwmd_BDlzA74KQHSRFKZwM9SWp9SFSQxFPxjmjHW_ze1ACfvPo"
+            "BQB-agKU7GymGkGieTfG5nzhU8u9Y5GSn95GD8pdntejYnHURbqn2lwD6h058Y5NbX1eNhwPE-e6jvhxJ-E"
         }
       });
       let json = yield request.json();
       let tracks = json.tracks.items;
 
-      // debugger;
       set(this, "results", tracks);
     } catch (e) {
       alert("Error fetching songs!");
       console.log(e);
     }
-  }).restartable(),
-
-  claimSongTask: task(function*(params) {
-    let profile = this.store.createRecord("profile", params);
-    try {
-      yield profile.save();
-      this.transitionToRoute("success", params.spotifyTrackid);
-    } catch (e) {
-      alert("There was a problem claiming this song.");
-      console.log(e);
-    }
-  }),
-
-  claimSong(e) {
-    e.preventDefault();
-    let params = {
-      email: this.email
-    };
-
-    let song = this.songs[this.emojiSong];
-
-    params.spotifyTrackid = song.trackId;
-
-    this.claimSongTask.perform(params);
-  }
+  }).restartable()
 });

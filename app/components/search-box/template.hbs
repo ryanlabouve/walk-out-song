@@ -1,0 +1,32 @@
+<div class="my-4 p-4 bg-gray-300 clearfix">
+  <img src="{{@url}}" class="float-left" width=30 />
+  {{#if this.selectSong}}
+    <button
+      onclick={{action (mut this.selectSong) false}}
+      class="bg-yellow-600 border text-white p-2 float-right"
+    >
+      Cancel
+    </button>
+  {{else}}
+    <button
+      onclick={{action (mut this.selectSong) true}}
+      class="bg-blue-600 border text-white p-2 float-right"
+    >
+      Claim
+    </button>
+  {{/if}}
+  {{@name}} by {{@artist}}
+</div>
+
+{{#if this.selectSong}}
+{{#let (hash
+    title=@name
+    artist=@artist
+    trackId=@id
+    previewUrl=@previewUrl
+  ) as |song| }}
+    <Player @song={{song}}>
+      <ClaimEmail @song={{song}} />
+    </Player>
+  {{/let}}
+{{/if}}

@@ -27,16 +27,7 @@
 
   {{#if emojiSong}}
     <Player @song={{get this.songs this.emojiSong}} as |song|>
-      <form onsubmit={{action claimSong}}>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-            Email
-          </label>
-          <input onchange={{action (mut email) value="target.value"}} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email">
-        </div>
-
-        <input value="Claim this song!" type=submit class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" />
-      </form>
+      <ClaimEmail />
     </Player>
   {{/if}}
   <div>
@@ -51,13 +42,17 @@
   {{else}}
     {{#if searchTerm}}
       {{#each results as |track|}}
-        <div class="my-4 p-4 bg-gray-300 clearfix">
-          <img src="{{track.album.images.firstObject.url}}" class="float-left" width=30 />
-          {{track.name}} by
-          {{track.album.artists.firstObject.name}}
-        </div>
+        <SearchBox
+          @url={{track.album.images.firstObject.url}}
+          @name={{track.name}}
+          @artist={{artist}}
+          @previewUrl={{track.preview_url}}
+          @id={{track.id}}
+        >
+        </SearchBox>
       {{else}}
-        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <h2 class="text-2xl">Error loading spotify results</h2>
+        <iframe src="https://open.spotify.com/embed/track/7GhIk7Il098yCjg4BQjzvb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       {{/each}}
     {{/if}}
   {{/if}}
