@@ -32,6 +32,8 @@ let songs = {
 export default Controller.extend({
   searchResults: [],
   searchTerm: null,
+  emojiSong: null,
+
   songs,
 
   searchResultsTask: task(function*(searchTerm) {
@@ -43,5 +45,28 @@ export default Controller.extend({
         title: "test"
       }
     ]);
-  })
+  }),
+
+  claimSongTask: task(function*(params) {
+    debugger;
+    let profile = this.store.createRecord("profile", params);
+    try {
+      yield profile.save();
+    } catch (e) {
+      console.log(e);
+    }
+  }),
+
+  claimSong(e) {
+    e.preventDefault();
+    let params = {
+      email: this.email
+    };
+
+    let song = this.songs[this.emojiSong];
+
+    params.trackId = song.trackId;
+
+    this.claimSongTask.perform(params);
+  }
 });
