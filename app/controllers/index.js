@@ -39,13 +39,25 @@ export default Controller.extend({
   searchResultsTask: task(function*(searchTerm) {
     set(this, "searchTerm", searchTerm);
 
-    yield timeout(2000);
-    set(this, "results", [
-      {
-        title: "test"
-      }
-    ]);
-  }),
+    yield timeout(1000);
+    let url = `https://api.spotify.com/v1/search?q=${this.searchTerm}&type=track`;
+    try {
+      let request = yield fetch(url, {
+        headers: {
+          Authorization:
+            "Bearer BQD6bb3nnt9ykZDUT_Zf6bYiSjRKZJxTOuwmd_BDlzA74KQHSRFKZwM9SWp9SFSQxFPxjmjHW_ze1ACfvPo"
+        }
+      });
+      let json = yield request.json();
+      let tracks = json.tracks.items;
+
+      // debugger;
+      set(this, "results", tracks);
+    } catch (e) {
+      alert("Error fetching songs!");
+      console.log(e);
+    }
+  }).restartable(),
 
   claimSongTask: task(function*(params) {
     let profile = this.store.createRecord("profile", params);

@@ -50,10 +50,13 @@
     <LoadingSpinner />
   {{else}}
     {{#if searchTerm}}
-      {{#each searchResults as |searchResult|}}
-        Match found!
+      {{#each results as |track|}}
+        <div class="my-4 p-4 bg-gray-300 clearfix">
+          <img src="{{track.album.images.firstObject.url}}" class="float-left" width=30 />
+          {{track.name}} by
+          {{track.album.artists.firstObject.name}}
+        </div>
       {{else}}
-        No matches found
         <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       {{/each}}
     {{/if}}
