@@ -48,7 +48,6 @@ export default Controller.extend({
   }),
 
   claimSongTask: task(function*(params) {
-    debugger;
     let profile = this.store.createRecord("profile", params);
     try {
       yield profile.save();
