@@ -38,7 +38,7 @@ export default class ClaimEmailComponent extends Component {
         profile.set("spotifyTrackidWaiting ", params.spotifyTrackidWaiting);
         profile.set("spotifyEmbedUrlWaiting  ", params.spotifyEmbedUrlWaiting);
         profile.set("spotifyTrackid", params.spotifyTrackid);
-        profile.set("spotifyEmbedUrl", params.spotifyEmbedUrl);
+        profile.set("spotifyEmbedUrl", params.spotifyEmbedUrlWaiting);
       }
 
       yield profile.save();
