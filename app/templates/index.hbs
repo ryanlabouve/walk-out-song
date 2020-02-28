@@ -26,8 +26,8 @@
   </div>
 
   {{#if emojiSong}}
-    <Player @song={{get this.songs this.emojiSong}} as |song|>
-      <ClaimEmail />
+    <Player @song={{get this.songs this.emojiSong}}>
+      <ClaimEmail @song={{get this.songs this.emojiSong}}/>
     </Player>
   {{/if}}
   <div>

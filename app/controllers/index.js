@@ -7,27 +7,30 @@ let songs = {
   heart: {
     title: "Lose Yourself to Dance",
     artist: "Daft Punk",
-    albumCover: "",
-    trackId: "5CMjjywI0eZMixPeqNd75R"
+    trackId: "5CMjjywI0eZMixPeqNd75R",
+    previewUrl:
+      "https://p.scdn.co/mp3-preview/24e8d6ba5f91d46782dc44ca9eb44db18b1fc897?cid=352b9da6530e4269a99b32174d12cb4c"
   },
   poop: {
     title: "Photograph",
     artist: "Nickleback",
-    albumCover: "",
-    trackId: "3hb2ScEVkGchcAQqrPLP0R"
-    // "https://p.scdn.co/mp3-preview/2926d141d7e00df9268b08e33400dc9a509bdfbf?cid=352b9da6530e4269a99b32174d12cb4c
+    trackId: "3hb2ScEVkGchcAQqrPLP0R",
+    previewUrl:
+      "https://p.scdn.co/mp3-preview/2926d141d7e00df9268b08e33400dc9a509bdfbf?cid=352b9da6530e4269a99b32174d12cb4c"
   },
   sob: {
     title: "Stay With Me",
     artist: "Sam Smith",
-    albumCover: "",
-    trackId: "5Nm9ERjJZ5oyfXZTECKmRt"
+    trackId: "5Nm9ERjJZ5oyfXZTECKmRt",
+    previewUrl:
+      "https://p.scdn.co/mp3-preview/7e1bd9665057172f1f4dc4130abaaffe584bbcb7?cid=352b9da6530e4269a99b32174d12cb4c"
   },
   curse: {
     title: "We're Not Gonna Take It",
     artist: "Twisted Sister",
-    albumCover: "",
-    trackId: "1hlveB9M6ijHZRbzZ2teyh"
+    trackId: "1hlveB9M6ijHZRbzZ2teyh",
+    previewUrl:
+      "https://p.scdn.co/mp3-preview/7e1bd9665057172f1f4dc4130abaaffe584bbcb7?cid=352b9da6530e4269a99b32174d12cb4c"
   }
 };
 export default Controller.extend({
@@ -46,7 +49,7 @@ export default Controller.extend({
       let request = yield fetch(url, {
         headers: {
           Authorization:
-            "Bearer BQCTiOQMgBvjCaOhjlv8ZJCSOeuA6xScwNKXpMxXtB_Mxqvd1l9fquPci5Un1GmDdhEyZHEC1ksqACi0WdU"
+            "Bearer BQCEF8SdpFMh0iHIFh_Yebw38tSwjDMiyNPnQteFCvDu-uIn9X0NnAueJbz8WuaUshQogUfQZJoTjFNd2Xg"
         }
       });
       let json = yield request.json();
