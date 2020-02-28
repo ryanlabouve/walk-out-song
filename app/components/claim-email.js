@@ -34,7 +34,6 @@ export default class ClaimEmailComponent extends Component {
 
       if (getProfile.length) {
         profile = getProfile.firstObject;
-        debugger;
       }
 
       yield profile.save();
