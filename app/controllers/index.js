@@ -23,7 +23,7 @@ let songs = {
     trackId: "5Nm9ERjJZ5oyfXZTECKmRt"
   },
   curse: {
-    title: "We're not going to take it",
+    title: "We're Not Gonna Take It",
     artist: "Twisted Sister",
     albumCover: "",
     trackId: "1hlveB9M6ijHZRbzZ2teyh"
