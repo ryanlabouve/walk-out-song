@@ -45,7 +45,7 @@ export default Controller.extend({
       let request = yield fetch(url, {
         headers: {
           Authorization:
-            "BQBTMD1of0Vr3s6-eUodMrWxsSZwei8K6IqZn2L4ADa22Otwwd4YdR-o2vvifEDO7k5qrBZQqTrkhFC_9To"
+            "Bearer BQCsZvzr-f8jYg_yaEYSrvywhlYovTH5GuzHPiQPo8igpSH8juO77CGHvD9_Wi-B0jAs3upk2nAjWWOuDnM"
         }
       });
       let json = yield request.json();
