@@ -1,6 +1,6 @@
 <div class="border border-rounded my-8 p-4 text-left">
   <div class="text-lg font-bold">{{@song.title}}</div>
-  <div class="mt-2 mb-4">by {{@song.artist}} artist</div>
+  <div class="mt-2 mb-4">by {{@song.artist}}</div>
   <iframe class="m-auto" src="https://open.spotify.com/embed/track/{{@song.trackId}}" style="opacity: 0.8" width="400" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   <div class="my-4">&nbsp;</div>
   {{yield}}

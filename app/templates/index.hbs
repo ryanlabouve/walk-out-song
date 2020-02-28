@@ -1,4 +1,4 @@
-  <div class="flex my-8">
+  <div class="flex my-8 text-center">
     <EmojiSelector
       @selected={{eq emojiSong "heart"}}
       @onclick={{action (mut emojiSong) "heart"}}
@@ -45,7 +45,7 @@
         <SearchBox
           @url={{track.album.images.firstObject.url}}
           @name={{track.name}}
-          @artist={{artist}}
+          @artist={{track.artists.firstObject.name}}
           @previewUrl={{track.preview_url}}
           @id={{track.id}}
         >
