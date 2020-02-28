@@ -17,11 +17,14 @@ export default class ClaimEmailComponent extends Component {
 
     params.spotifyTrackidWaiting = song.trackId;
     params.spotifyEmbedUrlWaiting = song.previewUrl;
+    params.spotifyTrackid = song.trackId;
+    params.spotifyEmbedUrl = song.previewUrl;
 
     this.claimSongTask.perform(params);
   }
 
   @task(function*(params) {
+    let getProfile = this.store.query;
     let profile = this.store.createRecord("profile", params);
     try {
       yield profile.save();
