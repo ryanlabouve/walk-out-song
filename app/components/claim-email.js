@@ -24,9 +24,19 @@ export default class ClaimEmailComponent extends Component {
   }
 
   @task(function*(params) {
-    let getProfile = this.store.query;
-    let profile = this.store.createRecord("profile", params);
     try {
+      let profile = this.store.createRecord("profile", params);
+      let getProfile = yield this.store.query("profile", {
+        filter: {
+          email: params.email
+        }
+      });
+
+      if (getProfile.length) {
+        profile = getProfile.firstObject;
+        debugger;
+      }
+
       yield profile.save();
       this.router.transitionTo("success", params.spotifyTrackidWaiting);
     } catch (e) {
