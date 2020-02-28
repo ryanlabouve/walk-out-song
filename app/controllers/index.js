@@ -15,6 +15,7 @@ let songs = {
     artist: "Nickleback",
     albumCover: "",
     trackId: "3hb2ScEVkGchcAQqrPLP0R"
+    // "https://p.scdn.co/mp3-preview/2926d141d7e00df9268b08e33400dc9a509bdfbf?cid=352b9da6530e4269a99b32174d12cb4c
   },
   sob: {
     title: "Stay With Me",
@@ -45,7 +46,7 @@ export default Controller.extend({
       let request = yield fetch(url, {
         headers: {
           Authorization:
-            "Bearer BQCsZvzr-f8jYg_yaEYSrvywhlYovTH5GuzHPiQPo8igpSH8juO77CGHvD9_Wi-B0jAs3upk2nAjWWOuDnM"
+            "Bearer BQCTiOQMgBvjCaOhjlv8ZJCSOeuA6xScwNKXpMxXtB_Mxqvd1l9fquPci5Un1GmDdhEyZHEC1ksqACi0WdU"
         }
       });
       let json = yield request.json();
