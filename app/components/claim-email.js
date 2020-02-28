@@ -25,7 +25,7 @@ export default class ClaimEmailComponent extends Component {
     let profile = this.store.createRecord("profile", params);
     try {
       yield profile.save();
-      this.router.transitionTo("success", params.spotifyEmbedUrlWaiting);
+      this.router.transitionTo("success", params.spotifyTrackidWaiting);
     } catch (e) {
       alert("There was a problem claiming this song.");
       console.log(e);
